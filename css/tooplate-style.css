@@ -374,11 +374,11 @@ p {
 
 footer {
 	text-align: center;
-	background-image: url(../img/footer-bg.png);
+	background-image: url(../img/temp.png);
 	background-size: cover;
 	width: 100%;
 	background-repeat: no-repeat;
-	padding: 11% 0px 4% 0px;
+	padding: 15% 0px 4% 0px;
 }
 
 footer ul {
