@@ -15,22 +15,44 @@ http://www.tooplate.com/view/2091-ziggy
 
 -->
         <title>Vitunix OS</title>
+
+        <link rel="icon" type="image/x-icon" href="C:\Users\dell\Downloads\vitunix.github.io-master\vitunix.github.io-master\img\vitunix.ico">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
+        <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="css/fontAwesome.css">
         <link rel="stylesheet" href="css/tooplate-style.css">
 
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+        <style>
+          a{
+            color: white;
+          }
+          a:hover{
+            color: white;
+          }
+        </style>
     </head>
     <body>
         
-
+        <nav>
+          <div id="navbar" class="vitunix">
+            <img src="C:\Users\dell\Downloads\vitunix.github.io-master\vitunix.github.io-master\img\vitunix.png" height="45px"width="45px"></img>&nbspVITUNIX</div>
+          <ul>
+              <li><a href = "#">Wiki</a></li>
+              <li><a href = "#">Tutorials</a></li>
+              <li><a href = "#">News</a></li>
+            <div class="github"><a href="https://github.com/vitunix" target="_blank">
+              <img src="C:\Users\dell\Downloads\vitunix.github.io-master\vitunix.github.io-master\img\github.png" width="35px" height="35px"></img>
+            </a></div>
+          </ul>
+        </nav>
         <section class="first-section">
           <div class="container">
             <div class="row">
@@ -39,7 +61,7 @@ http://www.tooplate.com/view/2091-ziggy
                   <h2>Vitunix OS</h2>
                   <div class="line-dec"></div>
               <span>A minimal distribution based on Arch Linux.<span>
-                <i> <p style="color: white;">Expected date for first roll out: Late February 2023</p> </i>
+                <i> <p style="color: white;">Expected date for first roll out: Late March 2023</p> </i>
 <a href="https://discord.gg/S9ya7eujqZ" target="_blank">
   <button style="color: black; font-weight: bold;">Join Discord</button>
 </a>
@@ -115,7 +137,19 @@ http://www.tooplate.com/view/2091-ziggy
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+        <script>
+          var nav = document.querySelector('nav'); // Identify target
+          window.addEventListener('scroll', function(event) { // To listen for event
+              event.preventDefault();
 
+              if (window.scrollY <= 50) { // Just an example
+                nav.style.backgroundColor = 'transparent'; // or default color
+              } else {
+                nav.style.backgroundColor = '#27445C';
+              }
+          });
+        </script>
+        
   <!--      <script src="js/vendor/bootstrap.min.js"></script>
 
         <script src="js/plugins.js"></script>
