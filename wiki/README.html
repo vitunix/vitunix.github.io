@@ -1,0 +1,408 @@
+<h1 id="cryptography">CryptoGraphy</h1>
+<h2 id="solving-some-cryptography-questions---cryptohackorg">Solving Some CryptoGraphy Questions - cryptohack.org</h2>
+<h2 id="installation">Installation</h2>
+<p>pip install pwn <br /><br />
+pip install base64 <br /><br />
+pip install Crypto <br /><br />
+pip install pycrypto <br /><br />
+#</p>
+<h3 id="introduction-to-cryptohack">Introduction to Cryptohack</h3>
+<pre><code class="hljs py language-py"><span class="hljs-comment"># ASCII to String</span>
+a = [<span class="hljs-number">99</span>, <span class="hljs-number">114</span>, <span class="hljs-number">121</span>, <span class="hljs-number">112</span>, <span class="hljs-number">116</span>, <span class="hljs-number">111</span>, <span class="hljs-number">123</span>, <span class="hljs-number">65</span>, <span class="hljs-number">83</span>, <span class="hljs-number">67</span>, <span class="hljs-number">73</span>, <span class="hljs-number">73</span>, <span class="hljs-number">95</span>, <span class="hljs-number">112</span>, <span class="hljs-number">114</span>, <span class="hljs-number">49</span>, <span class="hljs-number">110</span>, <span class="hljs-number">116</span>, <span class="hljs-number">52</span>, <span class="hljs-number">98</span>, <span class="hljs-number">108</span>, <span class="hljs-number">51</span>, <span class="hljs-number">125</span>]
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> a:
+    <span class="hljs-built_in">print</span>(<span class="hljs-built_in">chr</span>(i), end=<span class="hljs-string">&quot;&quot;</span>);
+
+<span class="hljs-comment"># Output = crypto{ASCII_pr1nt4bl3}</span>
+</code></pre>
+<pre><code class="hljs py language-py"><span class="hljs-comment"># Hex to String</span>
+a=<span class="hljs-string">&quot;63727970746f7b596f755f77696c6c5f62655f776f726b696e675f776974685f6865785f737472696e67735f615f6c6f747d&quot;</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">bytes</span>.fromhex(a))
+
+<span class="hljs-comment"># Output = b&#x27;crypto{You_will_be_working_with_hex_strings_a_lot}&#x27;</span>
+</code></pre>
+<pre><code class="hljs py language-py"><span class="hljs-comment">#  Base64 to String</span>
+<span class="hljs-comment"># Hex string, decode it into bytes and then encode it into Base64.</span>
+
+<span class="hljs-keyword">import</span> base64
+a = <span class="hljs-string">&quot;72bca9b68fc16ac7beeb8f849dca1d8a783e8acf9679bf9269f7bf&quot;</span>
+b = <span class="hljs-built_in">bytes</span>.fromhex(a)
+<span class="hljs-built_in">print</span>(base64.b64encode(b))
+
+<span class="hljs-comment">#Output = b&#x27;crypto/Base+64+Encoding+is+Web+Safe/&#x27;</span>
+</code></pre>
+<pre><code class="hljs py language-py"><span class="hljs-comment"># Bytes and Big Integers</span>
+
+<span class="hljs-keyword">from</span> Crypto.Util.number <span class="hljs-keyword">import</span> *
+a=<span class="hljs-number">11515195063862318899931685488813747395775516287289682636499965282714637259206269</span>
+<span class="hljs-built_in">print</span>(long_to_bytes(a))
+
+<span class="hljs-comment"># Output = b&#x27;crypto{3nc0d1n6_4ll_7h3_w4y_d0wn}&#x27;</span>
+</code></pre>
+<pre><code class="hljs py language-py"><span class="hljs-comment"># XOR Starter</span>
+
+<span class="hljs-keyword">from</span> pwn <span class="hljs-keyword">import</span> *
+data = <span class="hljs-string">&#x27;label&#x27;</span>
+flag = <span class="hljs-string">&quot;&quot;</span>
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> data:
+    flag += <span class="hljs-built_in">chr</span>(<span class="hljs-built_in">ord</span>(i) ^ <span class="hljs-number">13</span>)
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;crypto{{<span class="hljs-subst">{flag}</span>}}&#x27;</span>)
+
+<span class="hljs-comment"># Output  = crypto{aloha}</span>
+</code></pre>
+<pre><code class="hljs py language-py"><span class="hljs-comment"># XOR Properties</span>
+
+<span class="hljs-keyword">from</span> pwn <span class="hljs-keyword">import</span> *
+KEY1 = <span class="hljs-string">&quot;a6c8b6733c9b22de7bc0253266a3867df55acde8635e19c73313&quot;</span>
+flag = <span class="hljs-string">&quot;37dcb292030faa90d07eec17e3b1c6d8daf94c35d4c9191a5e1e&quot;</span>
+KEY1 = <span class="hljs-built_in">bytes</span>.fromhex(KEY1)
+flag = <span class="hljs-built_in">bytes</span>.fromhex(flag)
+KEY2 = xor(KEY1, flag)
+flag = <span class="hljs-string">&quot;c1545756687e7573db23aa1c3452a098b71a7fbf0fddddde5fc1&quot;</span>
+flag = <span class="hljs-built_in">bytes</span>.fromhex(flag)
+KEY3 = xor(KEY2, flag)
+flag = <span class="hljs-string">&quot;04ee9855208a2cd59091d04767ae47963170d1660df7f56f5faf&quot;</span>
+flag = <span class="hljs-built_in">bytes</span>.fromhex(flag)
+<span class="hljs-built_in">print</span>(xor(KEY1, KEY2, KEY3, flag))
+
+Output = <span class="hljs-string">b&#x27;crypto{x0r_i5_ass0c1at1v3}&#x27;</span>
+
+<span class="hljs-comment"># Another Method</span>
+
+KEY2 = xor(<span class="hljs-built_in">bytes</span>.fromhex(<span class="hljs-string">&quot;a6c8b6733c9b22de7bc0253266a3867df55acde8635e19c73313&quot;</span>),<span class="hljs-built_in">bytes</span>.fromhex(<span class="hljs-string">&quot;37dcb292030faa90d07eec17e3b1c6d8daf94c35d4c9191a5e1e&quot;</span>))
+
+KEY3 = xor(<span class="hljs-built_in">bytes</span>.fromhex(<span class="hljs-string">&quot;c1545756687e7573db23aa1c3452a098b71a7fbf0fddddde5fc1&quot;</span>),KEY2)
+
+last_flag = xor(<span class="hljs-built_in">bytes</span>.fromhex(<span class="hljs-string">&quot;a6c8b6733c9b22de7bc0253266a3867df55acde8635e19c73313&quot;</span>),KEY2,KEY3,<span class="hljs-built_in">bytes</span>.fromhex(<span class="hljs-string">&quot;04ee9855208a2cd59091d04767ae47963170d1660df7f56f5faf&quot;</span>))
+</code></pre>
+<pre><code class="hljs py language-py"><span class="hljs-comment"># Favourite byte</span>
+
+a = <span class="hljs-string">&quot;73626960647f6b206821204f21254f7d694f7624662065622127234f726927756d&quot;</span>
+a = <span class="hljs-built_in">bytes</span>.fromhex(a)
+b = <span class="hljs-number">1</span>
+<span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:
+     c = xor(a,b)
+     <span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;<span class="hljs-subst">{b}</span>. <span class="hljs-subst">{c}</span>&#x27;</span>)
+     b += <span class="hljs-number">1</span>
+
+<span class="hljs-comment"># Output = b&#x27;crypto{0x10_15_my_f4v0ur173_by7e}&#x27;</span>
+</code></pre>
+<pre><code class="hljs py language-py"><span class="hljs-comment"># You either know, XOR you don&#x27;t</span>
+
+msg = <span class="hljs-string">&quot;0e0b213f26041e480b26217f27342e175d0e070a3c5b103e2526217f27342e175d0e077e263451150104&quot;</span>
+msg = <span class="hljs-built_in">bytes</span>.fromhex(msg)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;msg = <span class="hljs-subst">{msg}</span>&#x27;</span>)
+
+flag_format = <span class="hljs-string">b&quot;crypto{&quot;</span>
+key = [o1 ^ o2 <span class="hljs-keyword">for</span> (o1, o2) <span class="hljs-keyword">in</span> <span class="hljs-built_in">zip</span>(msg, flag_format)] + [<span class="hljs-built_in">ord</span>(<span class="hljs-string">&quot;y&quot;</span>)]
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;key = <span class="hljs-subst">{key}</span>&#x27;</span>)
+
+flag = []
+key_len = <span class="hljs-built_in">len</span>(key)
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(msg)):
+    flag.append(msg[i] ^ key[i % key_len])
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;flag = <span class="hljs-subst">{flag}</span>&#x27;</span>)
+
+flag = <span class="hljs-string">&quot;&quot;</span>.join(<span class="hljs-built_in">chr</span>(o) <span class="hljs-keyword">for</span> o <span class="hljs-keyword">in</span> flag)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;(Flag: <span class="hljs-subst">{flag}</span>)&#x27;</span>)
+
+<span class="hljs-comment"># Output = crypto{1f_y0u_Kn0w_En0uGH_y0u_Kn0w_1t_4ll}</span>
+</code></pre>
+<h3 id="course-end">Course End</h3>
+<p>#</p>
+<h3 id="modular-arithmetic">Modular Arithmetic</h3>
+<pre><code class="hljs py language-py"><span class="hljs-comment"># gcd program -  Greatest Common Divisor(GCD)</span>
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">gcd</span>(<span class="hljs-params">a,b</span>):
+    <span class="hljs-keyword">if</span>(a&lt;b):
+        a,b = b,a
+    <span class="hljs-keyword">while</span> b!=<span class="hljs-number">0</span>:
+        <span class="hljs-built_in">print</span>(b)
+        a,b = b,a%b
+    <span class="hljs-keyword">return</span> a
+
+a = <span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;Enter 1st number: &quot;</span>))
+b = <span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;Enter 2nd number: &quot;</span>))
+<span class="hljs-built_in">print</span>(gcd(a,b))
+</code></pre>
+<pre><code class="hljs py language-py"><span class="hljs-comment"># Extended GCD program</span>
+<span class="hljs-keyword">from</span> math <span class="hljs-keyword">import</span> floor
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">gcd</span>(<span class="hljs-params">a,b</span>):
+    s1 = <span class="hljs-number">1</span>
+    s2 = <span class="hljs-number">0</span>
+    t1 = <span class="hljs-number">0</span>
+    t2 = <span class="hljs-number">1</span>
+    <span class="hljs-keyword">if</span>(a&lt;b):
+        a,b = b,a
+    <span class="hljs-keyword">while</span> b!=<span class="hljs-number">0</span>:
+        a,b,c = b,a%b,a/b
+        s1,s2 = s2, s1-(floor(c)*s2)
+        t1,t2 = t2, t1-(floor(c)*t2)
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;a = <span class="hljs-subst">{a}</span> \nb = <span class="hljs-subst">{b}</span> \nc = <span class="hljs-subst">{c}</span>\n&#x27;</span>)
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;\ns1 = <span class="hljs-subst">{s1}</span> s2 = <span class="hljs-subst">{s2}</span> t1 = <span class="hljs-subst">{t1}</span> t2 = <span class="hljs-subst">{t2}</span>\n&#x27;</span>)
+
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;Final Ans: gcd = <span class="hljs-subst">{a}</span> s = <span class="hljs-subst">{s1}</span> t = <span class="hljs-subst">{t1}</span>&quot;</span>)
+
+a = <span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;Enter 1st number: &quot;</span>))
+b = <span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;Enter 2nd number: &quot;</span>))
+<span class="hljs-built_in">print</span>(gcd(a,b))
+
+<span class="hljs-comment"># Output = crypto{10245, -8404}</span>
+<span class="hljs-comment"># Ans = -8404</span>
+</code></pre>
+<pre><code class="hljs py language-py"><span class="hljs-comment"># Modular Arithmetic 1</span>
+
+a = <span class="hljs-number">11</span> % <span class="hljs-number">6</span>
+b = <span class="hljs-number">8146798528947</span> % <span class="hljs-number">17</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">min</span>(a, b))
+
+<span class="hljs-comment">#Output = 4</span>
+</code></pre>
+<pre><code class="hljs py language-py"><span class="hljs-comment"># Modular Arithmetic 2</span>
+
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-number">273246787654</span>**<span class="hljs-number">65536</span> % <span class="hljs-number">65537</span>
+
+<span class="hljs-comment"># Output = 1</span>
+</code></pre>
+<pre><code class="hljs py language-py"><span class="hljs-comment"># Modular Inverting</span>
+
+a = <span class="hljs-number">1</span>
+<span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:
+    <span class="hljs-keyword">if</span>((<span class="hljs-number">3</span> * a) % <span class="hljs-number">13</span> == <span class="hljs-number">1</span>):
+        <span class="hljs-built_in">print</span>(a)
+        <span class="hljs-keyword">break</span>
+    a += <span class="hljs-number">1</span>
+
+<span class="hljs-comment"># Output = 9</span>
+</code></pre>
+<pre><code class="hljs py language-py"><span class="hljs-comment"># Quadratic Residues</span>
+
+<span class="hljs-comment"># a² = x mod p =&gt; a²-x =k*p</span>
+<span class="hljs-comment"># range of k (1,100)</span>
+
+<span class="hljs-keyword">from</span> Crypto.Util.number <span class="hljs-keyword">import</span> *
+<span class="hljs-keyword">from</span> math <span class="hljs-keyword">import</span> gcd
+a = <span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;Enter the value of a: &quot;</span>))
+p = <span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;Enter the value of p: &quot;</span>))
+zn = [i <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">1</span>,p) <span class="hljs-keyword">if</span> gcd(p,<span class="hljs-number">1</span>) == <span class="hljs-number">1</span>]
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> zn:
+    <span class="hljs-keyword">for</span> k <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">1</span>,<span class="hljs-number">100</span>):
+        <span class="hljs-keyword">if</span>(<span class="hljs-built_in">pow</span>(i,<span class="hljs-number">2</span>)-a == k*p):
+            <span class="hljs-built_in">print</span>(i)
+
+<span class="hljs-comment"># Output = 8,21</span>
+</code></pre>
+<h3 id="course-end-1">Course End</h3>
+<p>#</p>
+<h3 id="symmetric-cryptography">Symmetric Cryptography</h3>
+<p>Keyed Permutations</p>
+<pre><code>hljs What is the mathematical term for a <span class="hljs-keyword">one</span>-<span class="hljs-keyword">to</span>-<span class="hljs-keyword">one</span> correspondence? 
+
+Ans - crypto{bijection}
+</code></pre>
+<p>Resisting Bruteforce</p>
+<pre><code>hljs What <span class="hljs-keyword">is</span> <span class="hljs-keyword">the</span> <span class="hljs-built_in">name</span> <span class="hljs-keyword">for</span> <span class="hljs-keyword">the</span> best single-key attack <span class="hljs-keyword">against</span> AES? 
+
+Ans - crypto{Biclique}
+</code></pre>
+
+          </div>
+          <style type='text/css'>
+
+@media only screen and (max-width: 600px) {
+    body {
+        padding: 5px;
+    }
+    body>#content {
+        padding: 0px 20px 20px 20px !important;
+    }
+}
+
+body>#content {
+    margin: 0px;
+    max-width: 900px;
+    border: 1px solid #e1e4e8;
+    padding: 10px 40px;
+    padding-bottom: 20px;
+    border-radius: 2px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+hr {
+    color: #bbb;
+    background-color: #bbb;
+    height: 1px;
+    flex: 0 1 auto;
+    margin: 1em 0;
+    padding: 0;
+    border: none;
+}
+
+
+/**
+ * Links
+ */
+
+a {
+    color: #0366d6;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #0366d6;
+}
+
+a:hover {
+    color: #0366d6;
+    text-decoration: underline;
+}
+
+pre {
+    background-color: #f6f8fa;
+    border-radius: 3px;
+    font-size: 85%;
+    line-height: 1.45;
+    overflow: auto;
+    padding: 16px;
+}
+
+
+/**
+  * Code blocks
+  */
+
+code {
+    background-color: rgba(27, 31, 35, .05);
+    border-radius: 3px;
+    font-size: 85%;
+    margin: 0;
+    word-wrap: break-word;
+    padding: .2em .4em;
+}
+
+pre>code {
+    background-color: transparent;
+    border: 0;
+    display: inline;
+    line-height: inherit;
+    margin: 0;
+    overflow: visible;
+    padding: 0;
+    word-wrap: normal;
+    font-size: 100%;
+}
+
+
+/**
+ * Blockquotes
+ */
+
+blockquote {
+    margin-left: 30px;
+    margin-top: 0px;
+    margin-bottom: 16px;
+    border-left-width: 3px;
+    padding: 0 1em;
+    color: #828282;
+    border-left: 4px solid #e8e8e8;
+    padding-left: 15px;
+    font-size: 18px;
+    letter-spacing: -1px;
+    font-style: italic;
+}
+
+blockquote * {
+    font-style: normal !important;
+    letter-spacing: 0;
+    color: #6a737d !important;
+}
+
+
+/**
+ * Tables
+ */
+
+table {
+    border-spacing: 2px;
+    display: block;
+    font-size: 14px;
+    overflow: auto;
+    width: 100%;
+    margin-bottom: 16px;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+td {
+    padding: 6px 13px;
+    border: 1px solid #dfe2e5;
+}
+
+th {
+    font-weight: 600;
+    padding: 6px 13px;
+    border: 1px solid #dfe2e5;
+}
+
+tr {
+    background-color: #fff;
+    border-top: 1px solid #c6cbd1;
+}
+
+table tr:nth-child(2n) {
+    background-color: #f6f8fa;
+}
+
+
+/**
+ * Others
+ */
+
+img {
+    max-width: 100%;
+}
+
+p {
+    line-height: 24px;
+    font-weight: 400;
+    font-size: 16px;
+    color: #24292e;
+}
+
+ul {
+    margin-top: 0;
+}
+
+li {
+    color: #24292e;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+li+li {
+    margin-top: 0.25em;
+}
+
+* {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    color: #24292e;
+}
+
+a:visited {
+    color: #0366d6;
+}
+
+h1,
+h2,
+h3 {
+    border-bottom: 1px solid #eaecef;
+    color: #111;
+    /* Darker */
+}
+
+code>* {
+    font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace !important;
+}</style>
+<style type='text/css'>pre code.hljs{display:block;overflow-x:auto;padding:1em}code.hljs{padding:3px 5px}.hljs{color:#abb2bf;background:#282c34}.hljs-comment,.hljs-quote{color:#5c6370;font-style:italic}.hljs-doctag,.hljs-formula,.hljs-keyword{color:#c678dd}.hljs-deletion,.hljs-name,.hljs-section,.hljs-selector-tag,.hljs-subst{color:#e06c75}.hljs-literal{color:#56b6c2}.hljs-addition,.hljs-attribute,.hljs-meta .hljs-string,.hljs-regexp,.hljs-string{color:#98c379}.hljs-attr,.hljs-number,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-pseudo,.hljs-template-variable,.hljs-type,.hljs-variable{color:#d19a66}.hljs-bullet,.hljs-link,.hljs-meta,.hljs-selector-id,.hljs-symbol,.hljs-title{color:#61aeee}.hljs-built_in,.hljs-class .hljs-title,.hljs-title.class_{color:#e6c07b}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}.hljs-link{text-decoration:underline}</style>
