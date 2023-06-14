@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vitunix OS</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/styles.css" />
+
 </head>
 <body>
     <div id="particles-js">
         <div class="heading">
-            <nav class="navbar">
+            <nav class="navbar" id="mynav">
                 <div class="logo">
                     <div class="logo-img">
                         <img src="./img/vitunix.png" width="40" alt="">
@@ -23,19 +25,19 @@
                     </h1>
                 </div>
                 <ul class="pc-menu">
-                    <a href="">
+                    <a href="https://vitunix.github.io/wiki/index.html" target="_blank">
                         <li>Wiki</li>
                     </a>
-                    <a href="">
+                    <a href="https://discord.gg/qkEuNYAU">
                         <li>Discord</li>
                     </a>
-                    <a href="">
+                    <a href="#">
                         <li>News</li>
                     </a>
                     
                 </ul>
             </nav>
-            <div class="main">
+            <div class="main"  data-aos="fade-down">
                 <div class="left">
                     <div class="link">
                         <h3>
@@ -44,10 +46,15 @@
                     </div>
                     <div class="btns">
                         <div class="download-btn">
-                            <button>Download</button>
+                            <a href="#download">
+
+                                <button>Download</button>
+                            </a>
                         </div>
                         <div class="github-btn">
-                            <button>Github</button>
+                            <a href="https://github.com/vitunix" target="_blank">
+                                <button>Github</button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -75,13 +82,252 @@ BETA RELEASE IS OUT NOW!!!
             </div>
         </div>
     </div>
+    <section class="download" id="download">
+        <h1 class="download-title">
+            DOWNLOAD
+        </h1>
+        <div class="download-arena" data-aos="fade-up">
 
-    <script src=
-        "particles.js-master/particles.js">
-    </script>
-  
-    </script>
-    <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
+            <div class="download-card">
+                <div class="download-image">
+                    <img src="./img/download.png" width="100px" class="dld-1" alt="">
+                </div>
+                <div class="download-text">
+                    <h3>Sourceforge</h3>
+                    <div>Get the latest ISO from sourceforge.</div>
+                </div>
+                <div class="download-button">
+                    <a href="https://sourceforge.net/projects/vitunix/files/vitunix-2023.03.12-x86_64/" target="_blank">
+                        <button>
+                            DOWNLOAD
+                        </button>
+                    </a>
+                </div>
+            </div>
+    
+            <div class="download-card">
+                <div class="download-image">
+                    <img src="./img/download.png" width="100px" class="dld-2" alt="">
+                </div>
+                <div class="download-text">
+                    <h3>Google Drive</h3>
+                    <div>Get the latest ISO from google drive.</div>
+                </div>
+                <div class="download-button">
+                    <a href="https://drive.google.com/drive/folders/1YYYOTh589ERcU_hZ7Gpx5a52V9Hl21A9?usp=sharing" target="_blank">
+                        <button>
+                            DOWNLOAD
+                        </button>
+                    </a>
+                </div>
+            </div>
+    
+            <div class="download-card">
+                <div class="download-image">
+                    <img src="./img/download.png" width="100px" class="dld-3" alt="">
+                </div>
+                <div class="download-text">
+                    <h3>Torrent</h3>
+                    <div>Get the latest ISO from torrent.</div>
+                </div>
+                <div class="download-button">
+                    <a href="https://fosstorrents.com/distributions/vitunix/" target="_blank">
+                        <button>
+                            DOWNLOAD
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="features">
+        <h1 class="feature-heading">
+            Features of VITUnix OS
+        </h1>
+        <div class="ftr-arena" data-aos="fade-up">
+            <div class="card">
+                <div class="card-head">
+                    <div class="card-img">
+    
+                        <img src="./img/first-icon.png" alt="">
+                    </div>
+                    <h3 class="card-title">
+                        Window Managers
+                    </h3>
+                </div>
+                <div class="card-body">
+                    Vitunix will come pre-installed with openbox and bspwm window mananger.
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-head">
+                    <div class="card-img">
+    
+                        <img src="./img/second-icon.png" alt="">
+                    </div>
+                    <h3 class="card-title">
+                        Highly Customizable
+                    </h3>
+                </div>
+                <div class="card-body">
+                    Vitunix OS is highly customizable Arch linux, as a tour checkout my dotfiles <a href="https://github.com/heapbytes/dotfiles" class="here">here.</a>
+
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-head">
+                    <div class="card-img">
+    
+                        <img src="./img/third-icon.png" alt="">
+                    </div>
+                    <h3 class="card-title">
+                        Quick Support
+                    </h3>
+                </div>
+                <div class="card-body">
+                    Most developers of Vitunix OS would be online on the discord group. If you still haven't joined the group, here's the <a href="https://discord.gg/S9ya7eujqZ" class="here">link.</a> 
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="showcase">
+        <h1 class="show-title">
+            Showcases
+        </h1>
+        <div class="slideshow"  data-aos="fade-up">
+            <div id="prev">
+                <button id="prevBtn">
+                    Prev
+                </button>
+            </div>
+            <div class="img">
+                <img src="./img/custom.png" id="slide-img" width="700px" alt="">
+            </div>
+            <div class="contents">
+                <h1 id="slide-title">
+                    Highly Customizable
+                </h1>
+                <div class="slide-body" id="slide-body">
+                    VITUnix provides the User Interface which is easy to customize, letting you decide the face of your system.
+                </div>
+            </div>
+            <div id="next">
+                <button  id="nextBtn">
+                    Next
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <ul class=""  data-aos="fade-left">
+            <h3>
+                Discover
+            </h3>
+            <div class="footer-links">
+                <a href="#download">
+                    <li>Downloads</li>
+                </a>
+                <a href="https://vitunix.github.io/wiki/index.html">
+                    <li>Wiki</li>
+                </a>
+                <a href="">
+                    <li>News</li>
+                </a>
+                <a href="https://vitunix.github.io/wiki/index.html#contribution">
+                    <li>Contributions</li>
+                </a>
+            </div>
+        </ul>
+
+        <div class="right-footer">
+
+            <div class="socials">
+                <div class="discord">
+
+                    <a href="https://discord.gg/qkEuNYAU">
+                        <img src="./img/discord.png" width="30px" alt="">
+                    </a>
+                </div>
+                <div class="github">
+
+                    <a href="https://discord.gg/qkEuNYAU">
+                        <img src="./img/github.png" width="30px" alt="">
+    
+                    </a>
+                </div>
+                <div class="email">
+
+                    <a href="mailto:vitunix@proton.me">
+                        <img src="./img/email.png" width="30px" alt="">
+    
+                    </a>
+                </div>
+            </div>
+            
+            <div class="cpy-text">
+                Copyright &copy; 2023 VITUnix 
+            </div>
+
+        </div>
+
+
+    </footer>
+    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> 
+    <!-- stats.js lib -->
+     <!-- <script src="http://threejs.org/examples/js/libs/stats.min.js"></script> -->
     <script src="./js/scripts.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+        const myNav = document.getElementById('mynav');
+        window.onscroll = () => {
+            console.log("Hello");
+    if (window.scrollY > 300) {
+        myNav.classList.add('nav-active');
+    } else {
+        myNav.classList.remove('nav-active');
+    }
+};
+
+const images = ['./img/custom.png', './img/inactive-window-blur.png', './img/picom-blur.png'];
+const name = ["Highly Customizable", "Inactive Window Blur", "All Blur Customized Option"] ;
+const descriptions = ["VITUnix provides the User Interface which is easy to customize, letting you decide the face of your system.", "To avoid distraction from task at hand, VITUnix provides Inactive Window Blur configuration through which you can only focus on current working window!", "For workoholic people who likes multitasking, VITUnix configs provide an option of all window blur for better viewinf and customization."];
+var index = 0;
+
+function sendImages(i){
+    document.querySelector('#slide-img').src = images[i]
+    document.querySelector('#slide-title').textContent = name[i]
+    document.querySelector('#slide-body').textContent = descriptions[i]
+}
+
+document.querySelector('#prevBtn').addEventListener('click', () => {
+    if(index==0){
+        index=2
+    }else{
+        index--
+    }
+    sendImages(index);
+})
+
+document.querySelector('#nextBtn').addEventListener('click', () => {
+    if(index==2){
+        index=0
+    }else{
+        index++
+    }
+    sendImages(index);
+})
+    </script>
 </body>
 </html>
+
+<!--
+    online
+    adv js (async)
+    typescript
+-->
