@@ -197,10 +197,10 @@ BETA RELEASE IS OUT NOW!!!
         <h1 class="show-title">
             Showcases
         </h1>
-        <div class="slideshow"  data-aos="fade-up">
+        <div class="slideshow">
             <div id="prev">
                 <button id="prevBtn">
-                    Prev
+                    <
                 </button>
             </div>
             <div class="img">
@@ -216,7 +216,7 @@ BETA RELEASE IS OUT NOW!!!
             </div>
             <div id="next">
                 <button  id="nextBtn">
-                    Next
+                    >
                 </button>
             </div>
 
@@ -322,6 +322,15 @@ document.querySelector('#nextBtn').addEventListener('click', () => {
     }
     sendImages(index);
 })
+
+setInterval(()=>{
+    if(index==2){
+        index=0
+    }else{
+        index++
+    }
+    sendImages(index);
+}, 5000)
     </script>
 </body>
 </html>
