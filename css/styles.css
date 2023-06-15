@@ -1,0 +1,331 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans&display=swap');
+
+:root{
+    --blue-col : #1692cf;
+    --bg-col : #212121;
+    --col : #f1f2f2;
+}
+
+*{
+    font-family: 'Open Sans', sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    
+}
+.heading {
+    position: absolute;
+    /* text-align: center; */
+    /* top: 30%; */
+    width: 100%;
+    color: var(--col);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+#particles-js {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.296), rgba(0, 0, 0, 0.219)), url("../img/first-section-bg.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+nav.navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    padding: 10px 10px;
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3rem;
+}
+
+nav.navbar-back{
+    background-color: #29539b;
+background-image: linear-gradient(315deg, #29539b 0%, #1e3b70 74%);
+}
+
+ul.pc-menu{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    
+    font-size: 1.2rem;
+}
+
+ul.pc-menu a:hover{
+    color: var(--blue-col);
+}
+
+a{
+    text-decoration: none;
+    color: currentColor;
+}
+
+nav.navbar .logo{
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    gap: .5rem;
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: .1rem;
+}
+
+h1, .os{
+    letter-spacing: .1rem;
+
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.main{
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    /* background-color: #ffffff1c; */
+    padding: 2rem;
+    background-color: #00000075;
+    height: 50%;
+    border-radius: 12px;
+}
+
+.left{
+    text-align: left;
+}
+
+.right{
+    text-align: right;
+    text-transform: uppercase;
+}
+
+.btns{
+    display: flex;
+    gap: 1rem;
+}
+
+.download-btn button, .github-btn button, #prev button, #next button{
+    background-color: var(--blue-col);
+    border: none;
+    color: var(--col);
+    font-size: 1rem;
+    cursor: pointer;
+    padding: .5rem 2rem;
+    border-radius: 25px;
+    transition: all ease-in-out 300ms;
+}
+
+.download-btn button:hover, .github-btn button:hover{
+    /* background-color: var(--bg-col); */
+    transform: translateY(-.5rem);
+}
+
+#prev button:hover, #next button:hover{
+    filter: hue-rotate(90deg);
+}
+
+section.features{
+    background-color: #2234ae;
+background-image: linear-gradient(315deg, #2234ae 0%, #191714 74%);
+height: 70vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: space-around;
+    /* margin: 2rem; */
+}
+
+h1.feature-heading{
+    color: var(--col);
+    font-size: 2rem;
+}
+
+.ftr-arena{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.card{
+    width: 20%;
+    background-color: var(--col);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    height: 100%;
+    text-align: center;
+    border-radius: 12px;
+    transition: all ease-in-out 500ms;
+    cursor: pointer;
+}
+
+.card:hover{
+    transform: scale(1.1);
+}
+
+.card-head{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .2rem 3rem;
+    background-color: var(--bg-col);
+    color: var(--col);
+}
+
+
+.footer-links{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.footer-links a, a.here{
+    color: var(--blue-col);
+}
+
+.footer-links a:hover{
+    color: #055177;
+}
+
+ul{
+    list-style: none;
+}
+
+section.download{
+    height: 80vh;
+    background-color: var(--col);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 1rem;
+    align-items: center;
+    text-align: center;
+}
+
+.dld-3{
+    filter: hue-rotate(180deg);
+}
+
+.dld-2{
+    filter: hue-rotate(40deg);
+}
+
+.download-card{
+    padding: 1rem;
+    border-radius: 24px;
+    height: 100%;
+    width: 23%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    /* background-color: var(--bg-col); */
+    transition: all ease-in-out 400ms;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.download-arena{
+    width: 100%;
+    height: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.download-title{
+    font-size: 2rem;
+    color: var(--bg-col);
+    text-decoration: underline;
+}
+
+.download-card:hover{
+    transform: translateY(-1rem);
+}
+
+.download-button a button{
+    background-color: transparent;
+    border: 1px solid var(--bg-col);
+    border-radius: 24px;
+    padding: .54rem 2rem;
+    transition: all ease-in-out 300ms;
+}
+
+.download-button a button:hover{
+    background-color: var(--bg-col);
+    color: var(--col);
+}
+
+
+
+.socials{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: .3rem;
+}
+
+
+.socials img{
+    background-color: var(--col);
+    padding: .2rem;
+    border-radius: 50%;
+    transition: all ease-in-out 300ms;
+    filter: invert(1);
+}
+
+.socials img:hover{
+    filter: invert(0);
+}
+
+nav.nav-active{
+    z-index: 100;
+    background-color: #191714;
+}
+
+#slide-img{
+    transition: all ease-in-out 400ms;
+}
+
+.showcase{
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.showcase h1.show-title{
+    font-size: 2rem;
+    color: var(--bg-col);
+}
+
+.slideshow{
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    gap: 2rem;
+}
