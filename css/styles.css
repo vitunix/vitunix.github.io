@@ -306,6 +306,7 @@ nav.nav-active{
 }
 
 #slide-img{
+    max-width: 700px;
     transition: all ease-in-out 400ms;
 }
 
@@ -328,4 +329,8 @@ nav.nav-active{
     align-items: center;
     justify-content: center; 
     gap: 2rem;
+}
+
+@media screen and (max-width=700px) {
+    
 }
