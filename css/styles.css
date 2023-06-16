@@ -45,7 +45,7 @@ nav.navbar{
     top: 0;
     left: 0;
     width: 100%;
-    /* height: 70px; */
+    height: 70px;
     padding: 10px 10px;
     box-sizing: border-box;
     background-color: rgba(0, 0, 0, 0);
@@ -338,6 +338,7 @@ nav.nav-active{
         flex-direction: column;
         padding: 0;
         width: 100vw;
+        height: unset;
     }
     .main{
         flex-direction: column-reverse;
