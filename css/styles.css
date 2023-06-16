@@ -333,6 +333,14 @@ nav.nav-active{
     gap: 2rem;
 }
 
+.right-footer{
+    text-align: right;
+}
+
+a.author{
+    color: var(--blue-col);
+}
+
 @media screen and (max-width:700px) {
     nav.navbar{
         flex-direction: column;
@@ -373,6 +381,10 @@ nav.nav-active{
 
     .card{
         width: 50%;
+    }
+
+    .right-footer{
+        text-align: center;
     }
 
     #slide-img{
