@@ -203,16 +203,9 @@ Join the <a href="https://discord.gg/S9ya7eujqZ" target=_blank style="color: #16
                 </button>
             </div>
             <div class="img">
-                <img src="./img/custom.png" id="slide-img" width="900px" alt="showcase images">
+
             </div>
-            <div class="contents">
-                <h1 id="slide-title">
-                    Highly Customizable
-                </h1>
-                <div class="slide-body" id="slide-body">
-                    VITUnix provides the User Interface which is easy to customize, letting you decide the face of your system.
-                </div>
-            </div>
+           
             <div id="next">
                 <button  id="nextBtn">
                     >
@@ -291,15 +284,15 @@ Join the <a href="https://discord.gg/S9ya7eujqZ" target=_blank style="color: #16
     }
 };
 
-const images = ['./img/custom.png', './img/inactive-window-blur.png', './img/picom-blur.png'];
-const name = ["Highly Customizable", "Inactive Window Blur", "All Blur Customized Option"] ;
-const descriptions = ["VITUnix provides the User Interface which is easy to customize, letting you decide the face of your system.", "To avoid distraction from task at hand, VITUnix provides Inactive Window Blur configuration through which you can only focus on current working window!", "For workoholic people who likes multitasking, VITUnix configs provide an option of all window blur for better viewinf and customization."];
+const images = ['./img/1.jpg', './img/2.jpg'];
+// const name = ["Highly Customizable", "Inactive Window Blur", "All Blur Customized Option"] ;
+// const descriptions = ["VITUnix provides the User Interface which is easy to customize, letting you decide the face of your system.", "To avoid distraction from task at hand, VITUnix provides Inactive Window Blur configuration through which you can only focus on current working window!", "For workoholic people who likes multitasking, VITUnix configs provide an option of all window blur for better viewinf and customization."];
 var index = 0;
 
 function sendImages(i){
     document.querySelector('#slide-img').src = images[i]
-    document.querySelector('#slide-title').textContent = name[i]
-    document.querySelector('#slide-body').textContent = descriptions[i]
+    // document.querySelector('#slide-title').textContent = name[i]
+    // document.querySelector('#slide-body').textContent = descriptions[i]
 }
 
 document.querySelector('#prevBtn').addEventListener('click', () => {
@@ -312,7 +305,7 @@ document.querySelector('#prevBtn').addEventListener('click', () => {
 })
 
 document.querySelector('#nextBtn').addEventListener('click', () => {
-    if(index==2){
+    if(index==1){
         index=0
     }else{
         index++
@@ -321,7 +314,7 @@ document.querySelector('#nextBtn').addEventListener('click', () => {
 })
 
 setInterval(()=>{
-    if(index==2){
+    if(index==1){
         index=0
     }else{
         index++
