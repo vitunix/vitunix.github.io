@@ -1,6 +1,10 @@
 # Website
-> Source code for Vitunix's website.
+> quick fix to the vitunix site
 
-### Updates
-> Hop into the discord server, here's the <a href="https://discord.gg/S9ya7eujqZ" target="_blank"> link. </a>
+### credits
+
+**created by NEOLabs-software**
+
+![neolabs](https://github.com/NEOLabs-software/example-form-html/assets/101670923/7acb51d9-c48f-470a-9473-981358fb4865)
+
 
