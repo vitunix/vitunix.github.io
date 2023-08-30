@@ -1,0 +1,391 @@
+<html>
+
+<head>
+    <title>README.md</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <div id='content'>
+        <h2 id="openbox"><strong>i3 Tiling Windows Manager</strong></h2>
+        <h2 id="what-is-the-usage-of-openbox"><em>What is the usage of i3wm?</em></h2>
+        <p><em>i3wm, or i3 Window Manager, is a tiling window manager for X11-based systems. It is designed to provide a
+                highly
+                efficient and customizable window management experience. Unlike traditional stacking window managers,
+                where windows are
+                typically overlapped, i3wm arranges windows in a non-overlapping manner, known as tiling.</em>
+        </p>
+        <p><em>i3wm is going to save your computer from the burden of having to load all
+                those GUI-savvy
+                including applets, desklets, etc. Thus saving more memory and the best guess its memory consumption is
+                around 3% only!It
+                will serve more power to you and you alone.</em></p>
+        <img src="images/i3wm.jpeg">
+        <blockquote>
+            <p>For all shortcuts</p>
+            <a href="https://i3wm.org/docs/refcard.html" style="color:black;">
+                See i3wn reference card</a>
+        </blockquote>
+        <br />
+
+        <table>
+            <thead>
+                <tr>
+                    <th style="text-align:left; font-size:20px;">Syntax</th>
+                    <th style="text-align:left; font-size:20px;">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="text-align:left; font-size:17px;">Keybinding</td>
+                    <td style="text-align:left; font-size:17px;">Function</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left; font-size:17px;"><strong>mod + r +{i,j,k,l}</strong></td>
+                    <td style="text-align:left; font-size:17px;">resize current window (enter to exit resize mode)</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left; font-size:17px;"><strong>mod + shift + space</strong></td>
+                    <td style="text-align:left; font-size:17px;">Toggle Floating</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left; font-size:17px;"><strong>mod+Return</strong></td>
+                    <td style="text-align:left; font-size:17px;">Opens a terminal</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left; font-size:17px;"><strong>mod+f</strong></td>
+                    <td style="text-align:left; font-size:17px;">To make current window in fullscreen</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left; font-size:17px;"><strong>mod + {0-9}</strong></td>
+                    <td style="text-align:left; font-size:17px;">To change workspace from 1 - 10</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left; font-size:17px;"><strong>mod + shift + q</strong></td>
+                    <td style="text-align:left; font-size:17px;">To close current window</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left; font-size:17px;"><strong>super+d</strong></td>
+                    <td style="text-align:left; font-size:17px;">Opens app launcher</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left; font-size:17px;"><strong>mod+shift+{0-9}</strong></td>
+                    <td style="text-align:left; font-size:17px;">Shift current window to workspace num 1-10</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left; font-size:17px;"><strong>mod +{j, k, l, ;}</strong></td>
+                    <td style="text-align:left; font-size:17px;">Focus as per direction</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left; font-size:17px;"><strong>mod+shift+{j, k, l, ;}</strong></td>
+                    <td style="text-align:left; font-size:17px;">move current window to direction</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left; font-size:17px;"><strong>mod+{left+right+up+down}</strong></td>
+                    <td style="text-align:left; font-size:17px;">select screen left, right, up, down</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left; font-size:17px;"><strong>mod + e</strong></td>
+                    <td style="text-align:left; font-size:17px;">Default container layout</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left; font-size:17px;"><strong>mod + s</strong></td>
+                    <td style="text-align:left; font-size:17px;">Stacking container layout</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left; font-size:17px;"><strong>mod + w</strong></td>
+                    <td style="text-align:left; font-size:17px;">Tabbed container layout</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+    <style type='text/css'>
+        @media only screen and (max-width: 600px) {
+            body {
+                padding: 5px;
+            }
+
+            body>#content {
+                padding: 0px 20px 20px 20px !important;
+            }
+        }
+
+        body>#content {
+            margin: 0px;
+            max-width: 900px;
+            border: 1px solid #e1e4e8;
+            padding: 10px 40px;
+            padding-bottom: 20px;
+            border-radius: 2px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        hr {
+            color: #bbb;
+            background-color: #bbb;
+            height: 1px;
+            flex: 0 1 auto;
+            margin: 1em 0;
+            padding: 0;
+            border: none;
+        }
+
+
+        /**
+ * Links
+ */
+
+        a {
+            color: #0366d6;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: #0366d6;
+        }
+
+        a:hover {
+            color: #0366d6;
+            text-decoration: underline;
+        }
+
+        pre {
+            background-color: #f6f8fa;
+            border-radius: 3px;
+            font-size: 85%;
+            line-height: 1.45;
+            overflow: auto;
+            padding: 16px;
+        }
+
+
+        /**
+  * Code blocks
+  */
+
+        code {
+            background-color: rgba(27, 31, 35, .05);
+            border-radius: 3px;
+            font-size: 85%;
+            margin: 0;
+            word-wrap: break-word;
+            padding: .2em .4em;
+        }
+
+        pre>code {
+            background-color: transparent;
+            border: 0;
+            display: inline;
+            line-height: inherit;
+            margin: 0;
+            overflow: visible;
+            padding: 0;
+            word-wrap: normal;
+            font-size: 100%;
+        }
+
+
+        /**
+ * Blockquotes
+ */
+
+        blockquote {
+            margin-left: 30px;
+            margin-top: 0px;
+            margin-bottom: 16px;
+            border-left-width: 3px;
+            padding: 0 1em;
+            color: #828282;
+            border-left: 4px solid #e8e8e8;
+            padding-left: 15px;
+            font-size: 18px;
+            letter-spacing: -1px;
+            font-style: italic;
+        }
+
+        blockquote * {
+            font-style: normal !important;
+            letter-spacing: 0;
+            color: #6a737d !important;
+        }
+
+
+        /**
+ * Tables
+ */
+
+        table {
+            border-spacing: 2px;
+            display: block;
+            font-size: 14px;
+            overflow: auto;
+            width: 100%;
+            margin-bottom: 16px;
+            border-spacing: 0;
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 6px 13px;
+            border: 1px solid #dfe2e5;
+        }
+
+        th {
+            font-weight: 600;
+            padding: 6px 13px;
+            border: 1px solid #dfe2e5;
+        }
+
+        tr {
+            background-color: #fff;
+            border-top: 1px solid #c6cbd1;
+        }
+
+        table tr:nth-child(2n) {
+            background-color: #f6f8fa;
+        }
+
+
+        /**
+ * Others
+ */
+
+        img {
+            max-width: 100%;
+        }
+
+        p {
+            line-height: 24px;
+            font-weight: 400;
+            font-size: 16px;
+            color: #24292e;
+        }
+
+        ul {
+            margin-top: 0;
+        }
+
+        li {
+            color: #24292e;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.5;
+        }
+
+        li+li {
+            margin-top: 0.25em;
+        }
+
+        * {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            color: #24292e;
+        }
+
+        a:visited {
+            color: #0366d6;
+        }
+
+        h1,
+        h2,
+        h3 {
+            border-bottom: 1px solid #eaecef;
+            color: #111;
+            /* Darker */
+        }
+
+        code>* {
+            font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace !important;
+        }
+    </style>
+    <style type='text/css'>
+        pre code.hljs {
+            display: block;
+            overflow-x: auto;
+            padding: 1em
+        }
+
+        code.hljs {
+            padding: 3px 5px
+        }
+
+        .hljs {
+            color: #abb2bf;
+            background: #282c34
+        }
+
+        .hljs-comment,
+        .hljs-quote {
+            color: #5c6370;
+            font-style: italic
+        }
+
+        .hljs-doctag,
+        .hljs-formula,
+        .hljs-keyword {
+            color: #c678dd
+        }
+
+        .hljs-deletion,
+        .hljs-name,
+        .hljs-section,
+        .hljs-selector-tag,
+        .hljs-subst {
+            color: #e06c75
+        }
+
+        .hljs-literal {
+            color: #56b6c2
+        }
+
+        .hljs-addition,
+        .hljs-attribute,
+        .hljs-meta .hljs-string,
+        .hljs-regexp,
+        .hljs-string {
+            color: #98c379
+        }
+
+        .hljs-attr,
+        .hljs-number,
+        .hljs-selector-attr,
+        .hljs-selector-class,
+        .hljs-selector-pseudo,
+        .hljs-template-variable,
+        .hljs-type,
+        .hljs-variable {
+            color: #d19a66
+        }
+
+        .hljs-bullet,
+        .hljs-link,
+        .hljs-meta,
+        .hljs-selector-id,
+        .hljs-symbol,
+        .hljs-title {
+            color: #61aeee
+        }
+
+        .hljs-built_in,
+        .hljs-class .hljs-title,
+        .hljs-title.class_ {
+            color: #e6c07b
+        }
+
+        .hljs-emphasis {
+            font-style: italic
+        }
+
+        .hljs-strong {
+            font-weight: 700
+        }
+
+        .hljs-link {
+            text-decoration: underline
+        }
+    </style>
+</body>
+
+</html>
