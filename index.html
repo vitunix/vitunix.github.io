@@ -12,7 +12,9 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="icon" type="image/x-icon" href="./img/logo.png">
 
+  <link rel="stylesheet" href="./css/carousel.css">
   <link rel="stylesheet" href="./css/styles.css" />
+
 </head>
 
 <body>
@@ -172,18 +174,57 @@
 
   <section class="showcase">
     <h1 class="show-title">Showcases</h1>
-    <div class="slideshow">
-      <div id="prev">
-        <button id="prevBtn">
-          << /button>
-      </div>
-      <div class="img">
-        <img src="./img/1.jpg" alt="" id="slide-img" />
-      </div>
 
-      <div id="next">
-        <button id="nextBtn">></button>
+    <div class="wrapper">
+      <input checked type=radio name="slider" id="slide1" />
+      <input type=radio name="slider" id="slide2" />
+      <input type=radio name="slider" id="slide3" />
+
+      <div class="slider-wrapper">
+        <div class=inner>
+          <article>
+            <div class="info top-left">
+              <h3>BSPWM</h3>
+            </div>
+            <img src="./img/1.jpg" />
+          </article>
+
+          <article>
+            <div class="info bottom-right">
+              <h3>OpenBox</h3>
+            </div>
+            <img src="./img/2.jpg" />
+          </article>
+
+          <article>
+            <div class="info bottom-left">
+              <h3>i3wm</h3>
+            </div>
+            <img src="./img/3.png" />
+          </article>
+
+        </div>
+        <!-- .inner -->
       </div>
+      <!-- .slider-wrapper -->
+
+      <div class="slider-prev-next-control">
+        <label for=slide1></label>
+        <label for=slide2></label>
+        <label for=slide3></label>
+
+      </div>
+      <!-- .slider-prev-next-control -->
+
+      <div class="slider-dot-control">
+        <label for=slide1></label>
+        <label for=slide2></label>
+        <label for=slide3></label>
+
+      </div>
+      <!-- .slider-dot-control -->
+    </div>
+
     </div>
   </section>
 
@@ -247,43 +288,7 @@
       }
     };
 
-    const images = ["./img/1.jpg", "./img/2.jpg"];
-    // const name = ["Highly Customizable", "Inactive Window Blur", "All Blur Customized Option"] ;
-    // const descriptions = ["VITUnix provides the User Interface which is easy to customize, letting you decide the face of your system.", "To avoid distraction from task at hand, VITUnix provides Inactive Window Blur configuration through which you can only focus on current working window!", "For workoholic people who likes multitasking, VITUnix configs provide an option of all window blur for better viewinf and customization."];
-    var index = 0;
 
-    function sendImages(i) {
-      document.querySelector("#slide-img").src = images[i];
-      // document.querySelector('#slide-title').textContent = name[i]
-      // document.querySelector('#slide-body').textContent = descriptions[i]
-    }
-
-    document.querySelector("#prevBtn").addEventListener("click", () => {
-      if (index == 0) {
-        index = 1;
-      } else {
-        index--;
-      }
-      sendImages(index);
-    });
-
-    document.querySelector("#nextBtn").addEventListener("click", () => {
-      if (index == 1) {
-        index = 0;
-      } else {
-        index++;
-      }
-      sendImages(index);
-    });
-
-    setInterval(() => {
-      if (index == 1) {
-        index = 0;
-      } else {
-        index++;
-      }
-      sendImages(index);
-    }, 5000);
   </script>
 </body>
 
