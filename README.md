@@ -1,10 +1,16 @@
 # Website
-> quick fix to the vitunix site
+> Src code for Vitunix's website
 
 ### credits
 
-**created by NEOLabs-software**
+> Thanks to everyone in the support, feel free to create a pr.
 
-![neolabs](https://github.com/NEOLabs-software/example-form-html/assets/101670923/7acb51d9-c48f-470a-9473-981358fb4865)
-
+Contributors: 
+- Swarup Vishwas
+- Apoorva Pendse
+- NeoLabs Software (creator of <a href="https://github.com/ExelentOS">Exelent OS</a>)
+- Mayur Khadde
+- Vaishnavi Arthamwar
+- Shrutika Gade
+- & myself.
 
