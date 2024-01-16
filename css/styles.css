@@ -372,14 +372,21 @@ a.author {
   }
   section.download,
   section.features {
-    height: unset;
-    padding: 1rem;
-  }
+  min-height: 999vh; /* Adjust the minimum height as needed for the background */
+  background-color: #2234ae;
+  background-image: linear-gradient(315deg, #2234ae 0%, #191714 74%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
 
-  .ftr-arena {
-    flex-direction: column;
-    gap: 2rem;
-  }
+.ftr-arena {
+  height: 70%; /* Adjust the percentage as needed for the content */
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
 
   .download-card {
     gap: 1rem;
